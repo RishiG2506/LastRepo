@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +13,7 @@ public class Lock : MonoBehaviour
             if (playerInventory.collectedKey)
             {
                 gameObject.SetActive(false) ;
-                //FindObjectOfType<AudioManager>().Play("Lock");
+                FindObjectOfType<AudioManager>().Play("Lock");
                 int level_complete_score = (timer.totalTime - (int)timer.currTime) * 100;
                 PlayerScore.Instance.AddScore(level_complete_score);
                 Invoke("NextLevel", 2);

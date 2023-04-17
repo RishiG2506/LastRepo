@@ -11,10 +11,11 @@ public class Teacher : MonoBehaviour
             PlayerInventory playerInventory = collisionInfo.collider.GetComponent<PlayerInventory>();
             if (playerInventory.leave_count>0)
             {
+                FindObjectOfType<AudioManager>().Play("Lock");
                 gameObject.SetActive(false);
                 playerInventory.leave_count--;
-                //FindObjectOfType<AudioManager>().Play("Lock");
             }
+            else FindObjectOfType<AudioManager>().Play("Thud");
         }
     }
 }

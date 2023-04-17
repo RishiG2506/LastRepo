@@ -10,6 +10,7 @@ public class Smoke : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Hello");
             other.GetComponent<PlayerHealth>().Damage(damage);
         }
     }

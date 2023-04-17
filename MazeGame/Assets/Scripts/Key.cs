@@ -11,7 +11,7 @@ public class Key : MonoBehaviour
         {
             playerInventory.setKey();
             gameObject.SetActive(false);
-            //FindObjectOfType<AudioManager>().Play("Item");
+            FindObjectOfType<AudioManager>().Play("Item");
         }
         PlayerScore.Instance.AddScore(1000);
     }

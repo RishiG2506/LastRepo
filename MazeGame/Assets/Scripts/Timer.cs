@@ -33,9 +33,7 @@ public class Timer : MonoBehaviour
         {
             timerText.SetText("Whoops, Time Over!");
             Invoke("loadMenu", 2);
-        }
-
-        
+        }  
     }
 
     void loadMenu()

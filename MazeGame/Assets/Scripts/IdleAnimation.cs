@@ -12,6 +12,6 @@ public class IdleAnimation : MonoBehaviour
     }
     public void Update()
     {
-        anim.SetInteger("Idle2", 1);
+        anim.SetInteger("Idle", 1);
     }
 }

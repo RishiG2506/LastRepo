@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -16,15 +15,15 @@ public class PlayerHealth : MonoBehaviour
         healthBar.MaxHealth(maxHealth);
     }
 
-
-
     public void Damage(float damageAmount)
     {
         currentHealth -= damageAmount;
         healthBar.SetHealth((int)currentHealth);
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Leaderboard.Record("player", PlayerScore.Instance.score);
+            PlayerScore.Instance.ResetScore();
+            SceneManager.LoadScene("MainMenu");
         }
         healthBar.SetHealth((int)currentHealth);
     }
