@@ -17,6 +17,7 @@ public class Lock : MonoBehaviour
                 int level_complete_score = (timer.totalTime - (int)timer.currTime) * 100;
                 PlayerScore.Instance.AddScore(level_complete_score);
                 Invoke("NextLevel", 2);
+
             }
             
         }

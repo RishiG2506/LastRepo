@@ -18,6 +18,8 @@ public class PlayerScore : MonoBehaviour
         }
     }
     public int score { get; set; }
+    public string name { get; set; }
+
 
     public void Awake()
     {

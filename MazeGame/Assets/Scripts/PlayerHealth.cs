@@ -21,10 +21,20 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetHealth((int)currentHealth);
         if (currentHealth <= 0)
         {
-            Leaderboard.Record("player", PlayerScore.Instance.score);
             PlayerScore.Instance.ResetScore();
-            SceneManager.LoadScene("MainMenu");
+            Invoke("PreviousLevel", 1);
         }
         healthBar.SetHealth((int)currentHealth);
+    }
+
+    public void PreviousLevel()
+    {
+        if (PlayerScore.Instance.score <= 2000)
+        {
+            PlayerScore.Instance.ResetScore();
+        }
+        else
+            PlayerScore.Instance.AddScore(-2000);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

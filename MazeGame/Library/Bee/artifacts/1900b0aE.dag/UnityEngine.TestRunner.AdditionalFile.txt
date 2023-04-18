@@ -1,1 +1,1 @@
-/Users/gokhan/LastRepo/MazeGame
+D:\LastRepo\MazeGame

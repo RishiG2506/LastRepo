@@ -32,14 +32,19 @@ public class Timer : MonoBehaviour
         if ((int)currTime >= totalTime)
         {
             timerText.SetText("Whoops, Time Over!");
-            Invoke("loadMenu", 2);
+            Invoke("PrevLevel", 1);
         }  
     }
 
-    void loadMenu()
+    void PrevLevel()
     {
-        PlayerScore.Instance.ResetScore();
-        SceneManager.LoadScene("MainMenu");
+        if (PlayerScore.Instance.score <= 2000)
+        {
+            PlayerScore.Instance.ResetScore();
+        }
+        else
+            PlayerScore.Instance.AddScore(-2000);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
 }
